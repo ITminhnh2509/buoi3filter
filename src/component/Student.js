@@ -35,7 +35,7 @@ export default function Student() {
         } else {
             localStorage.setItem("listtodo", JSON.stringify(list))
         }
-    })
+    }, [])
     const deleteById = (id) => {
         let newList = list.filter(stud => stud.id !== id);
         setList(newList);
