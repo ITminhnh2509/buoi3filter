@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, ListGroup } from "reactstrap";
 import Add from "./Add";
 import Studentschild from "./Studentschild";
@@ -29,18 +29,32 @@ export default function Student() {
             checked: false,
         },
     ]);
+    useEffect(() => {
+        if (localStorage.getItem("listtodo")) {
+            setList(JSON.parse(localStorage.getItem("listtodo")))
+        } else {
+            localStorage.setItem("listtodo", JSON.stringify(list))
+        }
+    })
     const deleteById = (id) => {
-        setList(list.filter(stud => stud.id !== id))
+        let newList = list.filter(stud => stud.id !== id);
+        setList(newList);
+        localStorage.setItem("listtodo", JSON.stringify(newList));
     }
     const reChecked = (id) => {
-        setList(list.map((stud => stud.id === id ? { ...stud, checked: !stud.checked } : stud)));
+        let newlist = list.map((stud => stud.id === id ? { ...stud, checked: !stud.checked } : stud));
+        setList(newlist);
+        localStorage.setItem("listtodo", JSON.stringify(newlist));
     }
     const rename = (id, name) => {
-        setList(list.map(stud => stud.id == id ? { ...stud, name: name } : stud))
+        let newlist = list.map(stud => stud.id == id ? { ...stud, name: name } : stud);
+        setList(newlist);
+        localStorage.setItem("listtodo", JSON.stringify(newlist));
     }
     const addNewStudent = (name) => {
-        setList([...list, { id: list.length == 0 ? 1 : list.reduce((value, item) => Math.max(item.id, value) + 1, 0), name: name }]);
-        console.log(list);
+        let newList = [...list, { id: list.length == 0 ? 1 : list.reduce((value, item) => Math.max(item.id, value) + 1, 0), name: name }];
+        setList(newList);
+        localStorage.setItem("listtodo", JSON.stringify(newList));
     }
     const filterListStudent = (list, flag) => {
         if (flag == "CHECK") {
