@@ -13,7 +13,7 @@
 .student-item .student-name {
   width: 80%;
   text-align: left;
-  transform: translateY(50%);
+  transform: translateY(25%);
   color: #3498db;
 }
 .student-item .student-name.active {
@@ -26,4 +26,10 @@
   color: #3498db;
   padding: 30px;
   text-transform: uppercase;
+}
+input[type="checkbox"]:checked {
+  background-color: red !important;
+}
+.input-edit {
+  transform: translateY(-23%);
 }

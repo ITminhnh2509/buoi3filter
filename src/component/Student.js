@@ -35,9 +35,12 @@ export default function Student() {
     const reChecked = (id) => {
         setList(list.map((stud => stud.id === id ? { ...stud, checked: !stud.checked } : stud)));
     }
-
+    const rename = (id, name) => {
+        setList(list.map(stud => stud.id == id ? { ...stud, name: name } : stud))
+    }
     const addNewStudent = (name) => {
-        setList([...list, { id: !list ? 1 : list.length + 1, name: name }]);
+        setList([...list, { id: list.length == 0 ? 1 : list.reduce((value, item) => Math.max(item.id, value) + 1, 0), name: name }]);
+        console.log(list);
     }
     const filterListStudent = (list, flag) => {
         if (flag == "CHECK") {
@@ -61,7 +64,7 @@ export default function Student() {
                 <Add addNewStudent={addNewStudent} />
                 <ListGroup className="list-group-item">
                     {filterListStudent(list, flag).map((stud, index) => (
-                        <Studentschild key={index} student={stud} deleteById={deleteById} reChecked={reChecked} />
+                        <Studentschild key={index} student={stud} deleteById={deleteById} reChecked={reChecked} rename={rename} />
                     ))}
                 </ListGroup>
                 <Footer setFlag={setFlag} checkAll={checkAll} setCheckAll={setCheckAll} />
