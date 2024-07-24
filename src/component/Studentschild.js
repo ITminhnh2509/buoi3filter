@@ -13,6 +13,7 @@ export default function Studentschild(props) {
 
                 {
                     !isEdit ? <p onDoubleClick={() => setIsEdit(true)}>{student.name}</p> :
+
                         <Input className='input-edit' value={text} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => {
                             if (e.key == "Enter") {
                                 setIsEdit(false);

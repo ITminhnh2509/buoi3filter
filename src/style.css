@@ -33,3 +33,17 @@ input[type="checkbox"]:checked {
 .input-edit {
   transform: translateY(-23%);
 }
+.sidebar {
+  width: 200px;
+  height: 200px;
+  background: green;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: 1s;
+  transform: translateX(-110%);
+}
+.sidebar.active {
+  background: gold;
+  width: 300px;
+  height: 300px;
+  transform: translateX(0%);
+}
