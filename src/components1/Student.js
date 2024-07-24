@@ -84,9 +84,16 @@ export default function Student() {
                 name: name
             }
         }).then(function (res) {
-            alert("add success")
-            setText("");
-            getStudent();
+            // alert("add success")
+            // setText("");
+            // getStudent();
+            setData(data.map(item => item.id == id ? { ...item, name: name } : item))
+            Swal.fire({
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1000
+            });
         })
             .catch(function (erro) {
                 console.log(erro);
