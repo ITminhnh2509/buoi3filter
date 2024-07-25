@@ -7,6 +7,7 @@ import Hook7 from './hookexample/Hook7';
 import { useState } from 'react';
 import LearnAPI from './hookexample/LearnAPI';
 import Hook11 from './hookexample/Hook11';
+import Weatherapi from './component-buoi5/Weatherapi';
 function App() {
   const [show, setShow] = useState(false);
   return (
@@ -21,7 +22,8 @@ function App() {
     // </div >
     // <LearnAPI />
     // <Hook11 />
-    <Student />
+    // <Student />
+    <Weatherapi />
   );
 }
 

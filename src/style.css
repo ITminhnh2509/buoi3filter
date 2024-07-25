@@ -47,3 +47,41 @@ input[type="checkbox"]:checked {
   height: 300px;
   transform: translateX(0%);
 }
+.box-card-weather {
+  width: 550px;
+  height: 380px;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+.fa-solid {
+  padding-right: 10px;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.flex-weather {
+  display: flex;
+  justify-content: space-around;
+}
+.img-weather {
+  width: 200px;
+}
+.input-weather {
+  width: 60%;
+  margin: 0 auto;
+}

@@ -69,7 +69,7 @@ export default function Student() {
                     icon: "success",
                     title: "Your work has been saved",
                     showConfirmButton: false,
-                    timer: 1000
+                    timer: 1500
                 });
             })
             .catch(function (erro) {
@@ -92,7 +92,7 @@ export default function Student() {
                 icon: "success",
                 title: "Your work has been saved",
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1500
             });
         })
             .catch(function (erro) {
