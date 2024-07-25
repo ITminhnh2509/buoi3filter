@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/buoi3filter/static/css/main.7f7d9284.css",
+    "main.js": "/buoi3filter/static/js/main.fb4fef12.js",
+    "index.html": "/buoi3filter/index.html",
+    "main.7f7d9284.css.map": "/buoi3filter/static/css/main.7f7d9284.css.map",
+    "main.fb4fef12.js.map": "/buoi3filter/static/js/main.fb4fef12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f7d9284.css",
+    "static/js/main.fb4fef12.js"
+  ]
+}
